@@ -19,6 +19,7 @@ final class MenuController: UIViewController {
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         button.heightAnchor.constraint(equalToConstant: 45).isActive = true
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(nil, action: #selector(someButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -29,6 +30,16 @@ final class MenuController: UIViewController {
         setupConstraints()
     }
 }
+
+//MARK: - Business Logic
+private extension MenuController {
+    @objc func someButtonTapped() {
+        
+        let detailVC = DetailController()
+        present(detailVC, animated: true)
+    }
+}
+
 
 //MARK: - Layout
 private extension MenuController {

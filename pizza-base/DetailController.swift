@@ -11,7 +11,7 @@ class DetailController: UIViewController {
 
     //MARK: - UI
     private var someButton: UIButton = {
-        let button = UIButton(type: .custom)
+        let button = UIButton()
         button.backgroundColor = .orange
         button.setTitle("Корзина", for: .normal)
         button.layer.cornerRadius = 8
@@ -19,6 +19,7 @@ class DetailController: UIViewController {
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         button.heightAnchor.constraint(equalToConstant: 45).isActive = true
         button.translatesAutoresizingMaskIntoConstraints = false
+        
         return button
     }()
     
@@ -29,6 +30,7 @@ class DetailController: UIViewController {
         setupConstraints()
     }
 }
+
 
 //MARK: - Layout
 private extension DetailController {
